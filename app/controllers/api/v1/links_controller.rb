@@ -20,7 +20,8 @@ class Api::V1::LinksController < Api::ApiController
 
   def link_params
     params.permit(:url_link,
-                  :title)
+                  :title,
+                  :read_status)
   end
 
 end

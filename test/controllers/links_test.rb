@@ -29,5 +29,15 @@ class Api::V1::LinksControllerTest < ActionController::TestCase
     assert_equal Link.all.last[:title], 'reddit'
   end
 
+  test '#edit_read_status' do
+    link = Link.create(url_link: 'http://www.google.com', title: 'google')
+
+    patch :update, format: :json, id: link.id, read_status: true
+
+    assert_equal Link.all.last[:url_link], 'http://www.google.com'
+    assert_equal Link.all.last[:read_status], "true"
+    assert_equal Link.all.last[:title], 'google'
+  end
+
 
 end
