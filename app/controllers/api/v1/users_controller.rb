@@ -6,7 +6,7 @@ class Api::V1::UsersController < Api::ApiController
     user = User.create(user_params)
 
     if user.save
-      session[:current_user] = user
+      session[:current_user] = user.id
       respond_with :api, :v1, user
     end
   end

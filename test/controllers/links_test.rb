@@ -1,4 +1,5 @@
 require 'test_helper'
+require 'mocha'
 
 class Api::V1::LinksControllerTest < ActionController::TestCase
 
@@ -21,6 +22,7 @@ class Api::V1::LinksControllerTest < ActionController::TestCase
   end
 
   test '#edit' do
+
     link = Link.create(url_link: 'http://www.google.com', title: 'google')
 
     patch :update, format: :json, id: link.id, url_link: 'http://www.reddit.com', title: 'reddit'
@@ -30,6 +32,7 @@ class Api::V1::LinksControllerTest < ActionController::TestCase
   end
 
   test '#edit_read_status' do
+
     link = Link.create(url_link: 'http://www.google.com', title: 'google')
 
     patch :update, format: :json, id: link.id, read_status: true
