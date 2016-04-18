@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '4.2.5'
 gem 'pg', '~> 0.15'
 gem 'sass-rails', '~> 5.0'
@@ -21,7 +20,6 @@ group :development, :test do
   gem 'capybara'
   gem 'database_cleaner'
 end
-
 
 group :development do
   gem 'web-console', '~> 2.0'

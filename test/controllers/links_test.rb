@@ -20,5 +20,14 @@ class Api::V1::LinksControllerTest < ActionController::TestCase
     assert_response 422
   end
 
+  test '#edit' do
+    link = Link.create(url_link: 'http://www.google.com', title: 'google')
+
+    patch :update, format: :json, id: link.id, url_link: 'http://www.reddit.com', title: 'reddit'
+
+    assert_equal Link.all.last[:url_link], 'http://www.reddit.com'
+    assert_equal Link.all.last[:title], 'reddit'
+  end
+
 
 end
