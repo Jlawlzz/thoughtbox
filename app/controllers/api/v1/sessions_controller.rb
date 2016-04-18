@@ -7,10 +7,7 @@ class Api::V1::SessionsController < Api::ApiController
 
     if user && user.authenticate(params[:password])
       session[:current_user] = user
-
       respond_with :api, :v1, user
-    else
-      respond_with "failure"
     end
   end
 
