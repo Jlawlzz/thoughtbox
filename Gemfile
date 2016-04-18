@@ -14,6 +14,7 @@ gem 'minitest-matchers'
 gem 'responders'
 gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
 gem 'bcrypt', '~> 3.1.7'
+gem 'validate_url'
 
 group :development, :test do
   gem 'pry'

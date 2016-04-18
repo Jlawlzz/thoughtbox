@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20160418170434) do
   enable_extension "plpgsql"
 
   create_table "links", force: :cascade do |t|
-    t.string   "url"
+    t.string   "url_link"
     t.string   "title"
     t.binary   "read_status", default: "false"
     t.datetime "created_at",                    null: false
