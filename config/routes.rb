@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     namespace :v1, defaults: {format: :json} do
 
       resources :sessions, only: [:create, :show]
-      resources :users, only: [:show]
+      resources :users, only: [:create, :show]
 
     end
   end
