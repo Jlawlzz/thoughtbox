@@ -1,3 +1,4 @@
+
 class Api::V1::LinksController < Api::ApiController
 
   respond_to :json
@@ -11,7 +12,7 @@ class Api::V1::LinksController < Api::ApiController
   private
 
   def link_params
-    params.permit(:url,
+    params.permit(:url_link,
                   :title)
   end
 
