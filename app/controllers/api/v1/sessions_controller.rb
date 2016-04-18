@@ -6,7 +6,7 @@ class Api::V1::SessionsController < Api::ApiController
     user = User.find_by(username: params[:username])
 
     if user && user.authenticate(params[:password])
-      session[:current_user] = user
+      session[:current_user] = user.id
       respond_with :api, :v1, user
     end
   end
@@ -14,6 +14,7 @@ class Api::V1::SessionsController < Api::ApiController
   def destroy
     user = User.find(params[:id])
     session.clear
+
     respond_with :api, :v1, user
   end
 
