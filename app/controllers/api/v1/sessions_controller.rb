@@ -11,4 +11,10 @@ class Api::V1::SessionsController < Api::ApiController
     end
   end
 
+  def destroy
+    user = User.find(params[:id])
+    session.clear
+    respond_with :api, :v1, user
+  end
+
 end
