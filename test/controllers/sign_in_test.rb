@@ -1,17 +1,15 @@
 require 'test_helper'
 
-class Api::V1::Customers::FavoriteMerchantControllerTest < ActionController::TestCase
+class Api::V1::SessionsControllerTest < ActionController::TestCase
 
-  test '#show' do
+  test '#create' do
 
-    invoiceitem = create :invoice_item
-    invoiceitem.invoice.transactions << create(:transaction)
-
-    get :show, format: :json, customer_id: invoiceitem.invoice.customer.id
-
+    post :create, format: :json, username: 'johny', password: '123456', email: 'johny@hello.com'
+    
     answer = JSON.parse(response.body)
+
     assert_response :success
-    assert_equal invoiceitem.invoice.merchant.name, answer['name']
+    assert_equal User.all.first[:username], answer['username']
   end
 
 
